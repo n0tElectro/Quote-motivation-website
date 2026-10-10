@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html>
-
     <head>
-     <title> Motivational Quotes </title>
+        <link rel="stylesheet" href="style.css">   
+        <title> Motivational Quotes </title>
     </head>
-
-    <body>
-<div id="categories">
-    <button onclick="changeQuote('motivation')">Motivation</button>
-    <button onclick="changeQuote('discipline')">Discipline</button>
-    <button onclick="changeQuote('leadership')">Leadership</button>
-</div>
-
-<h1>say hello to motivation</h1>
-<h1 id="quote">press down here for some quotes</h1>
-<p id="author">- Author of the quote</p>
-<button onclick="changeQuote('random')">"Click Me for a random quote!"</button>
-
+        <body>
+            <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+            <div id="categories">
+            <button onclick="changeQuote('motivation')">Motivation</button>
+            <button onclick="changeQuote('discipline')">Discipline</button>
+            <button onclick="changeQuote('leadership')">Leadership</button>
+            </div>
+        <h1>say hello to motivation</h1>
+    <h1 id="quote">press down here for some quotes</h1>
+    <p id="author">- Author of the quote</p>
+    <button onclick="changeQuote('random')">"Click Me for a random quote!"</button>
+    
 <script>
     const quotesList = {
         motivation: [
@@ -49,20 +48,10 @@
     };
 
     
-function changeQuote(category) {
-    const current = quotesList[category];
-    const randomNumber = Math.floor(Math.random() * current.length);
-    
-    
-    const randomQuote = current[randomNumber];
 
-    document.getElementById("quote").innerText = `"${randomQuote.quote}"`;
-    document.getElementById("author").innerText = `- ${randomQuote.author}`;
-
-}
 
 </script>
-
+<script src="script.js"></script>
     </body>
 
 
