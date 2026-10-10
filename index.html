@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+     <title> Motivational Quotes </title>
+    </head>
+
+    <body>
+
+
+<h1>say hello to motivation</h1>
+<h1 id="quote">press down here for some quotes</h1>
+<p id="author">- Management quotes</p>
+<button onclick="changeQuote()">"Click Me!"</button>
+
+<script>
+    const quotesList = [
+        {quote: "the best way to predict the future is to invent it.", author: "Alan Kay"},
+        { quote: "Move fast and break things", author: "Mark Zuckerburg" },
+        { quote: "yesterday you said tomorrow. Just do it.", author:"Nike"},
+
+    ];
+function changeQuote() {
+    const randomNumber = Math.floor(Math.random() * quotesList.length);
+    const randomQuote = quotesList[randomNumber];
+
+    document.getElementById("quote").innerText = `"${randomQuote.quote}"`;
+    document.getElementById("author").innerText = `- ${randomQuote.author}`;
+
+}
+
+</script>
+
+    </body>
+
+
+</html>
