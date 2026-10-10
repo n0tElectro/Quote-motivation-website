@@ -6,23 +6,45 @@
     </head>
 
     <body>
-
+<div id="categories">
+    <button onclick="changeQuote('motivation')">Motivation</button>
+    <button onclick="changeQuote('discipline')">Discipline</button>
+    <button onclick="changeQuote('leadership')">Leadership</button>
+</div>
 
 <h1>say hello to motivation</h1>
 <h1 id="quote">press down here for some quotes</h1>
 <p id="author">- Management quotes</p>
-<button onclick="changeQuote()">"Click Me!"</button>
+<button onclick="changeQuote('motivation')">"Click Me!"</button>
 
 <script>
-    const quotesList = [
-        {quote: "the best way to predict the future is to invent it.", author: "Alan Kay"},
-        { quote: "Move fast and break things", author: "Mark Zuckerburg" },
-        { quote: "yesterday you said tomorrow. Just do it.", author:"Nike"},
+    const quotesList = {
+        motivation: [
+            {quote: "the best way to predict the future is to invent it.", author: "Alan Kay"},
+            { quote: "Move fast and break things", author: "Mark Zuckerburg" },
+            { quote: "yesterday you said tomorrow. Just do it.", author:"Nike"},
+        ],
+        discipline: [
+            {quote: "Discipline is the bridge between goals and accomplishment", author: "Jim Rohn"},
+            {quote: "No man is free who is not master of himself", author: "Epictetus"},
+            {quote: "Mastering others is strength. Mastering oneself is true power", author: "Lao Tzu"},
 
-    ];
-function changeQuote() {
-    const randomNumber = Math.floor(Math.random() * quotesList.length);
-    const randomQuote = quotesList[randomNumber];
+        ],
+        leadership: [
+            {quote: "Leadership is not about being in charge. It is about taking care of those in your charge", author: "Simon Sinek"},
+            {quote: "If your actions inspire others to dream more, learn more, do more, and become more, then you are a leader", author: "John Quincy Adams"},
+            {quote: "The greatest among you shall be your servant", author: "Jesus of Nazareth"},
+        ],
+
+    };
+
+    
+function changeQuote(category) {
+    const current = quotesList[category];
+    const randomNumber = Math.floor(Math.random() * current.length);
+    
+    
+    const randomQuote = current[randomNumber];
 
     document.getElementById("quote").innerText = `"${randomQuote.quote}"`;
     document.getElementById("author").innerText = `- ${randomQuote.author}`;
