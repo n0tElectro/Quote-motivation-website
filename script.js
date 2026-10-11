@@ -1,3 +1,10 @@
+confetti({
+    particleCount: 90,
+    spread: 120,
+    origin: { y: 0.8}
+
+});
+
 function changeQuote(category) {
     const current = quotesList[category];
     const randomNumber = Math.floor(Math.random() * current.length);
